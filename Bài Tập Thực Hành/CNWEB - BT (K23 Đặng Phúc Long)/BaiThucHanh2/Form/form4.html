@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chang BG Color</title>
+    <link rel="stylesheet" href="styles/style4.css">
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" id="input_color" class="color_name">
+        <input type="button" onclick="changeColor()" value="OK" class="button">
+    </div>
+
+    <script>
+        function changeColor() {
+            let color = document.getElementById('input_color').value;
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+    
+</body>
+</html>

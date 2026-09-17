@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 9 - Đối tượng Tự định nghĩa & Từ khóa with (Slide 31 - 38)</title>
+    <script>
+        // 1. Hàm khởi tạo (Constructor) và từ khóa this (Slide 32-34)
+        function SinhVien(mssv, hoTen, nganh) {
+            this.mssv = mssv;
+            this.hoTen = hoTen;
+            this.nganh = nganh;
+
+            // Định nghĩa phương thức cho đối tượng (Slide 35-36)
+            this.layThongTin = function() {
+                return "Sinh viên: " + this.hoTen + " - MSSV: " + this.mssv + " - Ngành: " + this.nganh;
+            };
+        }
+
+        function taoVaHienThiDoiTuong() {
+            // Dùng toán tử new để tạo thực thể (Slide 31)
+            var sv1 = new SinhVien("102220001", "Lương Duy Toàn", "Công nghệ Thông tin");
+
+            var ketQua = sv1.layThongTin();
+
+            // Minh họa từ khóa with (Slide 37-38)
+            var chiTietWith = "";
+            with (sv1) {
+                // Trong khối with, ta có thể gọi trực tiếp mssv, hoTen mà không cần gõ sv1.mssv
+                chiTietWith = " (Dùng lệnh with -> MSSV: " + mssv + ", Tên: " + hoTen + ")";
+            }
+
+            document.getElementById("outputObj").innerText = ketQua + "\n" + chiTietWith;
+        }
+    </script>
+</head>
+<body>
+    <h3>Demo 9: Đối tượng Tự định nghĩa (Constructor, this, with) (Slide 31 - 38)</h3>
+    <p>Bấm nút bên dưới để tạo một đối tượng SinhVien bằng từ khóa <code>new</code> và hiển thị thông tin:</p>
+
+    <button onclick="taoVaHienThiDoiTuong()">Tạo & Hiển thị Đối tượng</button>
+
+    <div id="outputObj" style="margin-top: 15px; font-weight: bold; color: darkblue; white-space: pre-line;"></div>
+</body>
+</html>

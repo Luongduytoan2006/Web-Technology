@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 1 - Toán tử và Cấu trúc điều khiển (Slide 5)</title>
+</head>
+<body>
+    <h3>Demo 1: Toán tử & Rẽ nhánh if...else / Vòng lặp</h3>
+
+    <!-- 1 ô nhập số điểm -->
+    <label>Nhập điểm (0 - 10): </label>
+    <input type="text" id="txtDiem" value="7">
+    <button onclick="kiemTraDiem()">Kiểm tra kết quả</button>
+
+    <!-- 1 ô nhập số N để in vòng lặp -->
+    <br><br>
+    <label>In các số từ 1 đến N: </label>
+    <input type="text" id="txtN" value="5">
+    <button onclick="chayVongLap()">Chạy vòng lặp</button>
+
+    <div id="ketQua" style="margin-top: 15px; font-weight: bold; color: blue;"></div>
+
+    <script>
+        function kiemTraDiem() {
+            var diem = parseFloat(document.getElementById("txtDiem").value);
+            var thongBao = "";
+
+            // Cấu trúc if...else và toán tử so sánh
+            if (diem >= 5) {
+                thongBao = "Điểm " + diem + " => Chúc mừng: ĐẬU!";
+            } else {
+                thongBao = "Điểm " + diem + " => Rất tiếc: HỌC LẠI!";
+            }
+            document.getElementById("ketQua").innerHTML = thongBao;
+        }
+
+        function chayVongLap() {
+            var n = parseInt(document.getElementById("txtN").value);
+            var chuoi = "Dãy số (vòng for): ";
+
+            // Vòng lặp for và toán tử ++
+            for (var i = 1; i <= n; i++) {
+                chuoi += i + " ";
+            }
+            document.getElementById("ketQua").innerHTML = chuoi;
+        }
+    </script>
+</body>
+</html>

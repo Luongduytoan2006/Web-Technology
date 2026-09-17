@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+    <style>
+        body {
+            background-color: #ccffcc;
+            font-family: Arial;
+        }
+
+        .form-container {
+            width: 300px;
+            margin: 100px auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: inline-block;
+            width: 80px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 180px;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function checkLogin() {
+            var u = document.f.username.value;
+            var p = document.f.password.value;
+            if (u === "" || p === "") {
+                alert("Vui lòng nhập đầy đủ Username và Password.");
+                return false;
+            }
+            alert("Đăng nhập thành công!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <form name="f" onsubmit="return checkLogin();">
+            <label>Username:</label>
+            <input type="text" name="username"><br><br>
+            <label>Password:</label>
+            <input type="password" name="password"><br><br>
+
+            <div class="button-group">
+                <input type="submit" value="OK">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

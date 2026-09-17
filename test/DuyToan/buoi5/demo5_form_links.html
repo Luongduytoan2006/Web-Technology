@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 5 - Đối tượng Form và Links (Slide 21 - 22)</title>
+    <script>
+        function kiemTraForm() {
+            var ten = document.myForm.username.value;
+            if (ten.trim() === "") {
+                alert("Lỗi: Bạn chưa nhập tên người dùng!");
+                return false; // Ngăn chặn form gửi đi
+            }
+            alert("Form hợp lệ! Bắt đầu gửi dữ liệu...");
+            return true; // Cho phép gửi
+        }
+
+        function reChuotVaoLink() {
+            document.getElementById("thongTinLink").innerText = "Bạn đang rê chuột lên trên liên kết Google!";
+        }
+
+        function roiChuotKhoiLink() {
+            document.getElementById("thongTinLink").innerText = "Bạn đã rời chuột khỏi liên kết.";
+        }
+    </script>
+</head>
+<body>
+    <h3>Demo 5: Đối tượng Form (onSubmit) và Links (onMouseOver)</h3>
+
+    <!-- 1. Minh họa Form và sự kiện onSubmit -->
+    <h4>1. Đối tượng Form:</h4>
+    <form name="myForm" action="https://www.google.com" method="GET" onsubmit="return kiemTraForm()">
+        Tên đăng nhập: <input type="text" name="username">
+        <input type="submit" value="Gửi dữ liệu (Submit)">
+    </form>
+
+    <hr>
+
+    <!-- 2. Minh họa Links và sự kiện onMouseOver / onMouseOut -->
+    <h4>2. Đối tượng Links:</h4>
+    <a href="https://google.com" target="_blank" 
+       onmouseover="reChuotVaoLink()" 
+       onmouseout="roiChuotKhoiLink()">
+       Rê chuột vào liên kết này
+    </a>
+    <p id="thongTinLink" style="color: purple; font-weight: bold;"></p>
+</body>
+</html>

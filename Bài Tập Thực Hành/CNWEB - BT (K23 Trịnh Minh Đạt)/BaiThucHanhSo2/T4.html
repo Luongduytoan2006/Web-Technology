@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h4>Ảnh, Flash,...</h4>
+    <img id="mainImage" src="" width="100%">
+    <script>
+        // Thêm timestamp để tránh cache
+        document.getElementById('mainImage').src = 'Images/anh2.jpg?' + new Date().getTime();
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap minh hoa 4</title>
+</head>
+<body>
+    <label>Value:</label>
+    <input type="text" id="text1">
+    <br>
+    <label>Action:</label>
+    <br>
+    <input type="radio" name="thaotac" id="op1" value="1">Double
+    <br>
+    <input type="radio" name="thaotac" id="op2" value="2">Square
+    <br>
+    <label>Result:</label>
+    <input type="text" id="text2" readonly>
+    <script>
+
+        const radios = document.getElementsByName('thaotac');
+        radios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                //alert(typeof(this.value));
+                let result;
+                //alert(this.value.trim() === "1");
+                if (this.value.trim() == "1") {
+                    let value = document.getElementById('text1').value;
+                    if (!checkIfNumber(value)) {
+                        alert("Số hạng trên không là số!");
+                        document.getElementById('text2').value ='';
+                        return;
+                    }
+                    let number = Number(value);
+                    result = 2 * number;
+                } else {
+                    let value = document.getElementById('text1').value;
+                    if (!checkIfNumber(value)) {
+                        alert("Số hạng trên không là số!");
+                        return;
+                    }
+                    let number = Number(value);
+                    result = number**2;
+                }
+               
+                document.getElementById('text2').value = result;
+            });
+        });
+        
+        
+        function checkIfNumber(value) {
+            return !isNaN(Number(value)) && value.trim() !== '';
+        }
+    </script>
+</body>
+</html>

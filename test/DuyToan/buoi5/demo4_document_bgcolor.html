@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 4 - Đối tượng Document & Đổi màu nền (Slide 16 - 20)</title>
+    <script>
+        function doiMauNen() {
+            // Lấy giá trị màu người dùng gõ vào ô textbox
+            var mau = document.formDoiMau.txtMau.value;
+            // Thay đổi thuộc tính bgColor của đối tượng document
+            document.bgColor = mau;
+        }
+    </script>
+</head>
+<body>
+    <h3>Demo 4: Đổi màu nền trang web qua document.bgColor (Mẫu Bài 4 BTH1)</h3>
+    <p>Nhập tên màu (ví dụ: <code>pink</code>, <code>yellow</code>, <code>lightblue</code>) hoặc mã hex (<code>#bbffcc</code>):</p>
+
+    <form name="formDoiMau">
+        <input type="text" name="txtMau" value="pink">
+        <input type="button" value="OK / Đổi màu" onclick="doiMauNen()">
+    </form>
+</body>
+</html>

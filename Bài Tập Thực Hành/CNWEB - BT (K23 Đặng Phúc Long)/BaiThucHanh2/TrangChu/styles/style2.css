@@ -1,0 +1,22 @@
+.T2{
+    width: 65px;
+    height: 500px;
+    padding-right: 15px;
+    border-right: 2px solid #c72092;
+}
+.T2 ul{
+    list-style: none;
+    padding: 20px 0px;
+}
+.T2 ul li{
+    width: 100%;
+    margin: 10px 5px;
+}
+.T2 ul li a{
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.T2 ul li a:hover{
+    color: #c72092;
+}

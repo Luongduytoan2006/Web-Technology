@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap minh hoa 2</title>
+</head>
+<body>
+    
+    <label>Nhập biểu thức:</label>
+    <input type="text" id="text1">
+    <br>
+    
+    <label>Kết quả:</label>
+    <input type="text" id="text2" readonly >
+    <br>
+    <input type="button" name="cal" id="cal" value="Calculate">
+    <script>
+        document.getElementById('cal').addEventListener('click',function(e) {
+            try {
+                let bt = document.getElementById('text1').value;
+                console.log(bt);
+                let result = eval(bt); 
+                document.getElementById('text2').value = result;
+            } catch (error) {
+                alert("Có lỗi xảy ra:", error.message);
+            }
+        })
+    </script>
+</body>
+</html>

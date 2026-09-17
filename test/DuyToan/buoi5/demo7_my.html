@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 7 - Đối tượng Select (Bắt đầu từ chỉ mục 0) (Slide 26 - 28)</title>
+    <script>
+        function SelectFocus() {
+            var ch = document.f1.t1.value;
+            document.f1.s1.selectedIndex = ch;
+        }
+        
+        // CÁCH 2: DÙNG NÚT BẤM / INPUT ĐIỀU KHIỂN (Mẫu Slide 27-28)
+        function chonTheoChiMuc() {
+            var idx = parseInt(document.formSelect.txtIndex.value);
+            var selectBox = document.formSelect.mySelect;
+
+            if (idx >= 0 && idx < selectBox.length) {
+                selectBox.selectedIndex = idx;
+                // Gọi lại hàm hiển thị
+                khiThayDoiMuc(selectBox);
+            } else {
+                alert("Lỗi: Chỉ mục chỉ từ 0 đến " + (selectBox.length - 1) + "!");
+            }
+        }
+    </script>
+</head>
+
+<body onload="document.f1.t1.focus()">
+    <h3>Demo 7: Đối tượng Select (Không cần input & Bắt đầu từ chỉ mục 0)</h3>
+
+    <form name=f1 action="" method="">
+        <label><b>Chọn môn học:</b></label><br>
+
+        <select name=s1 onchange="khiThayDoiMuc(this)" style="padding: 5px; font-size: 15px;">
+            <option value="0">Mục 0: HTML Cơ bản</option>
+            <option value="1">Mục 1: CSS Giao diện</option>
+            <option value="2">Mục 2: JavaScript Tương tác</option>
+            <option value="3">Mục 3: PHP & MySQL</option>
+        </select>
+
+        <hr>
+        <p>(Phần phụ theo Slide 27-28: Nhập chỉ mục để nhảy đến mục đó)</p>
+        <label>Nhập chỉ mục (0 - 3): </label>
+        <input type="text" name=t1 value="">
+        <input type =button name =b1 value="Ok" onclick="SelectFocus()">
+        <hr>
+
+        
+    </form>
+</body>
+
+</html>

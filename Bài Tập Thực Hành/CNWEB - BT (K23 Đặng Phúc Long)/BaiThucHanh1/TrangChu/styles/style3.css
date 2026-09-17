@@ -1,0 +1,83 @@
+
+.main{
+    background-image: url('../../image/bg1.png');
+}
+.main .main_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main .main_content .main_text h1{
+    font-size: 90px;
+    line-height: 70px;
+    font-family: pyxidium quick;
+   
+    background:linear-gradient(to right,#c72092,#6c14d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top: 45px;
+    left: 4%;
+}
+.main .main_content .main_text h1 span{
+    font-size: 70px;
+    /* background:linear-gradient(to right,#c72092,#6c14d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.main .main_content .main_text p{
+    width: 600px;
+    text-align: justify;
+    line-height: 21px;
+    position: relative;
+    top: 85px;
+    left:5%;
+}
+.main .main_content .main_image{
+    width: 650px;
+    position: relative;
+    top: 75px;
+    left:20px;
+   
+}
+
+.main .social{
+    position: absolute;
+    top:55%;
+    left:98%;
+    font-size: 20px;
+    transform: translate(-50%,-50%);
+} 
+
+.main .social i{
+    margin: 8px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.main .social i:hover{
+    color:#c72092;
+}
+
+.main .button{
+    position: absolute;
+    left: 6%;
+    background: linear-gradient(to right,#c72092,#6c14d0);
+    padding: 10px 20px;
+    border-radius: 30px;
+    
+}
+
+.main .button a{
+    color: white;
+    text-decoration: none;
+}
+
+.main .button i{
+    color: white;
+    transition: 0.3s;
+}
+.main .button:hover i{
+    transform: translateX(6px);
+}

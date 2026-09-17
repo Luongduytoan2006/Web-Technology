@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap minh hoa 6</title>
+    <style>
+        #text1,#text2 {
+            width: 300px;
+            overflow: hidden;
+            white-space: nowrap;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="text" id="text1" readonly>
+    <br>
+    <br>
+    <input type="text" id="text2" readonly>
+    
+    <script>
+        let text1Input = document.getElementById('text1');
+        let text1 = "Xin chào bạn đến với JS_                                     ";
+        let position1 = 0;
+        
+        function startMarquee1() {
+            text1Input.value = text1.slice(position1) + text1.slice(0, position1);
+            position1++;
+            if (position1 > text1.length) {
+                position1 = 0; 
+            }
+        }
+       
+        // Chạy hàm startMarquee1 mỗi 100ms
+        setInterval(startMarquee1, 100);
+
+
+        
+        let text2Input = document.getElementById('text2');
+        let text2 = "Welcome to JavaScript_                                         ";
+        let position2 = 0;
+        function startMarquee2() {
+            text2Input.value = text2.slice(position2) + text2.slice(0, position2);
+            position2++;
+            if (position2 > text2.length) {
+                position2 = 0; 
+            }
+        }
+        setInterval(startMarquee2, 100);
+      
+    </script>
+</body>
+</html>

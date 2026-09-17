@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đổi màu nền</title>
+  <style>
+
+  </style>
+  <script>
+    function changeColor() {
+      const color = document.querySelector("input[name='Color']").value;
+      document.body.style.backgroundColor = color;
+    }
+  </script>
+</head>
+<body>
+  <label>Nhập màu: </label>
+  <input type="text" name="Color" placeholder="Nhập màu">
+  <button onclick="changeColor()">OK</button>
+</body>
+</html>

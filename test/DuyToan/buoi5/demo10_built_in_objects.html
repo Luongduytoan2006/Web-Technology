@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 10 - Các đối tượng có sẵn trong JS (Slide 39 - 40)</title>
+    <script>
+        function chayThuCacDoiTuong() {
+            var thongBao = "";
+
+            // 1. Đối tượng Math
+            var canBacHai = Math.sqrt(64); // 8
+            var soNgauNhien = Math.floor(Math.random() * 100) + 1; // 1 đến 100
+            thongBao += "1. [Math]: Căn bậc 2 của 64 = " + canBacHai + " | Số ngẫu nhiên: " + soNgauNhien + "\n\n";
+
+            // 2. Đối tượng Date
+            var ngayHienTai = new Date();
+            thongBao += "2. [Date]: Hôm nay là: " + ngayHienTai.toLocaleDateString() + " - Giờ: " + ngayHienTai.toLocaleTimeString() + "\n\n";
+
+            // 3. Đối tượng String
+            var str = "cong nghe web";
+            thongBao += "3. [String]: Chuỗi ban đầu: '" + str + "' -> Chữ hoa: '" + str.toUpperCase() + "' (Độ dài: " + str.length + ")\n\n";
+
+            // 4. Đối tượng Array
+            var ngonNgu = new Array("HTML", "CSS", "JavaScript", "PHP");
+            thongBao += "4. [Array]: Danh sách ngôn ngữ: " + ngonNgu.join(", ") + " (Có " + ngonNgu.length + " phần tử)";
+
+            document.getElementById("outputBuiltIn").innerText = thongBao;
+        }
+    </script>
+</head>
+<body>
+    <h3>Demo 10: Các đối tượng có sẵn (Math, Date, String, Array) (Slide 39 - 40)</h3>
+    <p>Bấm nút bên dưới để thực thi các phương thức của đối tượng tích hợp sẵn:</p>
+
+    <button onclick="chayThuCacDoiTuong()">Chạy thử các đối tượng có sẵn</button>
+
+    <div id="outputBuiltIn" style="margin-top: 15px; font-weight: bold; color: darkgreen; white-space: pre-line; background-color: #f0f0f0; padding: 10px; border-radius: 5px;"></div>
+</body>
+</html>

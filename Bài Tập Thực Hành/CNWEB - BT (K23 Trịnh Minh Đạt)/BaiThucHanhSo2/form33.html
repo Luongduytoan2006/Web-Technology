@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function blurHandler() {
+            var t1 = document.getElementById("text1").value;
+            var result = "";
+
+            for (var i = 0; i < t1.length; i++) {
+                var char = t1.charAt(i);
+                if (char >= 'A' && char <= 'Z') {
+                    result += char.toLowerCase();
+                } else if (char >= 'a' && char <= 'z') {
+                    result += char.toUpperCase();
+                } else {
+                    result += char;
+                }
+            }
+
+            document.getElementById("text2").value = result;
+        }
+
+        function focusText() {
+            document.getElementById("text1").focus();
+        }
+
+        window.onload = focusText;
+    </script>
+</head>
+
+<body>
+    <form>
+        <table border="0" cellpadding="5">
+            <tr>
+                <td><label for="text1">Nhập dữ liệu:</label></td>
+                <td><input type="text" id="text1" onblur="blurHandler()"></td>
+            </tr>
+            <tr>
+                <td><label for="text2">Kết quả:</label></td>
+                <td><input type="text" id="text2"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 8 - Checkbox & Radio Button (Slide 29 - 30)</title>
+    <script>
+        function kiemTraLuaChon() {
+            var thongBao = "";
+
+            // 1. Kiểm tra Radio Button (Giới tính)
+            var radNam = document.formCheck.radGioiTinh[0];
+            var radNu = document.formCheck.radGioiTinh[1];
+            if (radNam.checked) {
+                thongBao += "Giới tính: " + radNam.value + "\n";
+            } else if (radNu.checked) {
+                thongBao += "Giới tính: " + radNu.value + "\n";
+            } else {
+                thongBao += "Chưa chọn giới tính!\n";
+            }
+
+            // 2. Kiểm tra Checkbox (Sở thích)
+            var chkWeb = document.formCheck.chkHocWeb;
+            if (chkWeb.checked) {
+                thongBao += "Bạn CÓ đăng ký học Công nghệ Web.";
+            } else {
+                thongBao += "Bạn KHÔNG đăng ký học Công nghệ Web.";
+            }
+
+            alert(thongBao);
+        }
+    </script>
+</head>
+<body>
+    <h3>Demo 8: Đối tượng Checkbox & Radio qua thuộc tính .checked (Slide 29 - 30)</h3>
+
+    <form name="formCheck">
+        <!-- Radio Button (Chỉ được chọn 1) -->
+        <p><b>Chọn giới tính:</b></p>
+        <input type="radio" name="radGioiTinh" value="Nam" checked> Nam
+        <input type="radio" name="radGioiTinh" value="Nữ"> Nữ
+        <br><br>
+
+        <!-- Checkbox (Tùy chọn bật/tắt) -->
+        <p><b>Đăng ký môn học:</b></p>
+        <input type="checkbox" name="chkHocWeb" checked> Tôi muốn học Công nghệ Web
+        <br><br>
+
+        <!-- Button kiểm tra -->
+        <input type="button" value="Kiểm tra trạng thái đã chọn" onclick="kiemTraLuaChon()">
+    </form>
+</body>
+</html>

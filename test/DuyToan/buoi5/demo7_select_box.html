@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 7 - Đối tượng Select (Bắt đầu từ chỉ mục 0) (Slide 26 - 28)</title>
+    <script>
+        // CÁCH 1: DÙNG SELECT THUẦN (KHÔNG CẦN Ô INPUT)
+        // Khi người dùng chọn mục trong danh sách, sự kiện onchange tự kích hoạt
+        function khiThayDoiMuc(selectElement) {
+            // Chỉ mục (selectedIndex) luôn bắt đầu từ 0
+            var viTri = selectElement.selectedIndex;
+            var giaTri = selectElement.value;
+            var vanBan = selectElement.options[viTri].text;
+
+            document.getElementById("thongTinSelect").innerHTML =
+                "Đang chọn mục có chỉ mục số <b>" + viTri + "</b> (bắt đầu từ 0)<br>" +
+                "- Tên hiển thị: <i>" + vanBan + "</i><br>" +
+                "- Giá trị (value): <code>" + giaTri + "</code>";
+        }
+
+        // CÁCH 2: DÙNG NÚT BẤM / INPUT ĐIỀU KHIỂN (Mẫu Slide 27-28)
+        function chonTheoChiMuc() {
+            var idx = parseInt(document.formSelect.txtIndex.value);
+            var selectBox = document.formSelect.mySelect;
+
+            if (idx >= 0 && idx < selectBox.length) {
+                selectBox.selectedIndex = idx;
+                // Gọi lại hàm hiển thị
+                khiThayDoiMuc(selectBox);
+            } else {
+                alert("Lỗi: Chỉ mục chỉ từ 0 đến " + (selectBox.length - 1) + "!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Demo 7: Đối tượng Select (Không cần input & Bắt đầu từ chỉ mục 0)</h3>
+
+    <form name="formSelect">
+        <label><b>Chọn môn học:</b></label><br>
+        <!-- Thẻ select thuần: tự bắt sự kiện onchange khi người dùng chọn -->
+        <select name="mySelect" onchange="khiThayDoiMuc(this)" style="padding: 5px; font-size: 15px;">
+            <option value="html">Mục 0: HTML Cơ bản</option>
+            <option value="css">Mục 1: CSS Giao diện</option>
+            <option value="js">Mục 2: JavaScript Tương tác</option>
+            <option value="php">Mục 3: PHP & MySQL</option>
+        </select>
+
+        <div id="thongTinSelect" style="margin: 15px 0; padding: 10px; background-color: #e8f4f8;">
+            Chọn thử một mục ở trên để thấy chỉ mục index thay đổi (bắt đầu từ 0).
+        </div>
+
+        <hr>
+
+        <p>(Phần phụ theo Slide 27-28: Nhập chỉ mục để nhảy đến mục đó)</p>
+
+        <label>Nhập chỉ mục (0 - 3): </label>
+        <input type="text" name="txtIndex" size="3" value="1">
+        <input type="button" value="Chọn" onclick="chonTheoChiMuc()">
+    </form>
+</body>
+
+</html>

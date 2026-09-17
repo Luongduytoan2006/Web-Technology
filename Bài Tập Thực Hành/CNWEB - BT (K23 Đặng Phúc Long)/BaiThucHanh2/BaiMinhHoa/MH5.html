@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="select1">
+        <option value="1">Xuan</option>
+        <option value="2">Ha</option>
+        <option value="3">Thu</option>
+        <option value="4">Dong</option>
+    </select>
+    <script>
+        let se = document.getElementById('select1');
+        
+        se.addEventListener('change', function() {
+            let selectedValue = se.value; 
+            let selectedText = se.options[se.selectedIndex].text; 
+            alert(`IDNV : ${selectedValue} HoTen : ${selectedText}`);
+        });
+    </script>
+</body>
+</html>

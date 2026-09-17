@@ -1,0 +1,245 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: true,
+                directionNav: true
+            });
+        });
+        function reload() {
+            location.reload();
+        }
+        function movePage() {
+                let titleKCNTT = document.querySelector('.kcntt');
+                titleKCNTT.style.opacity = '1';
+                document.querySelector('.wd-slide-banner').innerHTML = '';
+        }
+        
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="wd-center">
+            <div class="wd-top-header">
+                <div class="wd-top-left">
+                    <ul class="wd-list-menu-l">
+                        <li>Tin tức &amp; Sự kiện</li>
+                        <li>Thông báo</li>
+                        <li>Văn bản</li>
+                        <li>Lịch tuần</li>
+                        <li>Danh bạ</li>
+                        <li>Liên hệ</li>
+                    </ul>
+                </div>
+                <div class="wd-top-right">
+                    <div class="wd-component wd-languageNormal">
+                        <div class="wd-select-language">
+                            <img src="../image/flag-english.png">
+                            <span style="color: #fff; padding-left: 5px;">English</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="wd-header-content">
+            <div class="wd-content">
+                <img src="../image/logo-k_cntt.png">
+                <div class="wd-content-right">
+
+                    <div class="wd-input">
+                        <input class="txt-search" type="text" placeholder="Tìm kiếm thông tin">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="wd-navigation">
+                <ul class="menu">
+                    <li class="menu-item"><a href="">HOME</a></li>
+                    <li class="menu-item"> <a href="">GIỚI THIỆU</a>
+                        <ul class="submenu">
+                            <li><a href="">Tầm nhìn và Sứ mạng</a></li>
+                            <li><a href="">Kế hoạch chiến lược phát triển</a>
+                            </li>
+                            <li><a href="">Giới thiệu chung</a></li>
+                            <li><a href="">Cơ cấu tổ chức</a></li>
+                            <li><a href="">Bộ môn Công nghệ phần mềm</a></li>
+                            <li><a href="">Bộ môn Mạng và Truyền thông</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="">TUYỂN SINH</a></li>
+                    <li class="menu-item"><a href="">ĐÀO TẠO</a>
+                        <ul class="submenu">
+                            <li><a href="">Mô hình đào tạo</a></li>
+                            <li><a href="">Đào tạo đại học</a>
+
+                            </li>
+                            <li><a href="">Đào tạo sau đại học</a>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="">NGHIÊN CỨU KHOA HỌC</a>
+                        <ul class="submenu">
+                            <li><a href="">Các hướng nghiên cứu</a></li>
+                            <li><a href="">Bài báo khoa học</a></li>
+                            <li><a href="">Công trình nghiên cứu</a></li>
+                            <li><a href="">Lý lịch khoa học</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="">HỢP TÁC</a>
+                        <ul class="submenu">
+                            <li><a href="">Hợp tác nhà trường</a></li>
+                            <li><a href="">Hợp tác doanh nghiệp</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="">SINH VIÊN</a>
+                        <ul class="submenu">
+                            <li><a href="">Sổ tay sinh viên</a>
+                            </li>
+                            <li><a href="">Khảo sát việc làm</a>
+                            </li>
+                            <li><a href="">Đoàn thanh niên</a></li>
+                            <li><a href="">Nhóm hy vọng</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="">CỰU SINH VIÊN</a>
+                        <ul class="submenu">
+                            <li><a href="">Danh sách Cựu sinh viên đại học</a>
+                            </li>
+                            <li><a href="">Danh sách Cựu học viên cao học</a>
+                            </li>
+                            <li><a href="">Danh sách Cựu nghiên cứu sinh</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="">LIÊN HỆ</a></li>
+                </ul>
+
+            </div>
+            <div class="wd-breadcumb">
+                Trang chủ<a class="kcntt" onclick="reload()"> / Khoa Công nghệ thông tin</a>
+            </div>
+        </div>
+        <div class="wd-slide-banner">
+            <div class="flexslider">
+                <ul class="slides">
+
+                    <li><img src="../image/Slider_KhoaCNTT_AUNQAKQ.jpg" alt=""></li>
+                    <li><img src="../image/Slider_KhoaCNTT_KN40namCB.jpg" alt=""></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="Main">
+
+            <div class="MainLeft">
+                <div class="MainTopLeft">
+                    <h2 class="title">K. CÔNG NGHỆ THÔNG TIN</h2>
+                    <ul class="list">
+                        <a href="form7.html" target="MainContent" onclick="movePage()"><li>Thông báo</li></a>
+                        <a href="form6.html" target="MainContent" onclick="movePage()"><li>Tin tức hoạt động</li></a>
+                        <a href="form8.html" target="MainContent" onclick="movePage()"><li>Đào tạo đại học</li></a>
+                        <a href="form9.html" target="MainContent" onclick="movePage()"><li>Đào tạo sau đại học</li></a>
+                        <a href="form10.html" target="MainContent" onclick="movePage()"><li>Nghiên cứu khoa học</li></a>
+                        <a ><li>Biểu mẫu của Khoa</li></a>
+                        <a ></a><li>Góp ý với Khoa</li></a>
+                    </ul>
+                </div>
+                <div class="MainBottomLeft">
+                    <h2 class="contact-title">THÔNG TIN LIÊN HỆ</h2>
+                    <p class="department">Khoa Công nghệ thông tin</p>
+                    <p class="address"><span class="icon">📍</span> 54 Nguyễn Lương Bằng, Quận Liên Chiểu, Thành phố Đà
+                        Nẵng</p>
+                    <p class="phone"><span class="icon">📞</span> (+84.0236) 3736949</p>
+                    <p class="email"><span class="icon">📧</span> cntt@dut.udn.vn</p>
+                    <p class="website"><span class="icon">🌐</span> <a
+                            href="">http://dut.udn.vn/KhoaCNTT</a></p>
+
+                </div>
+            </div>
+            
+           
+            <iframe name="MainContent" class="FrameContent" src="form11.html" >
+                
+            </iframe>
+-*
+
+            
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <div class="wd-footer-container-home">
+            <div class="wd-center">
+                <div class="wd-top-footer">
+                    <div class="wd-block-info-company">
+                        <h3 class="wd-title-footer">Tuyển sinh &amp; đào tạo</h3>
+                        <ul>
+                            <li>Thông tin tuyển sinh</li>
+                            <li>Đào tạo đại học</li>
+                            <li>Đào tạo sau đại học</li>
+                            <li>Đào tạo thường xuyên</li>
+                            <li>Văn bản pháp quy</li>
+                        </ul>
+                    </div>
+                    <div class="wd-block-info-company">
+                        <h3 class="wd-title-footer">Các liên kết khác</h3>
+                        <ul>
+                            <li>Thư viện</li>
+                            <li>E-Learning</li>
+                            <li>Email</li>
+                            <li>Hệ thống thông tin sinh viên</li>
+                            <li>Hệ thống tác nghiệp</li>
+                        </ul>
+                    </div>
+                    <div class="wd-block-info-company">
+                        <h3 class="wd-title-footer">Kết nối</h3>
+                        <ul class="wd-social">
+                            <li><i class="fa-brands fa-facebook"></i>Facebook</li>
+                            <li><i class="fa-brands fa-youtube"></i>Youtube</li>
+                            <li><i class="fa-brands fa-twitter"></i>Twitter</li>
+                        </ul>
+                    </div>
+                    <div class="wd-block-info-company last">
+                        <h3 class="wd-title-footer">Lượt truy cập</h3>
+                        <ul>
+                            <li>Tổng số lượt: <br><b>3.316.068</b></li>
+                            <li>Đang online: <b>30</b></li>
+                            <li>Webmaster: <br>WebAdmin@dut.udn.vn</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+                <div class="wd-footer">
+                    <p>© Bản quyền Trường Đại học Bách khoa - Đại học Đà Nẵng</p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 6 - Text Box & Đổi Chữ Hoa onBlur (Slide 23 - 25)</title>
+    <script>
+        // Khi tải trang: Tự động đưa con trỏ (focus) vào ô nhập
+        function khoiTaoTrang() {
+            document.form5.txtInput.focus();
+        }
+
+        // Khi rời khỏi ô nhập (onblur): Đổi toàn bộ chữ thành CHỮ HOA
+        function doiChuHoa() {
+            var oNhap = document.form5.txtInput;
+            oNhap.value = oNhap.value.toUpperCase();
+        }
+    </script>
+</head>
+<body onload="khoiTaoTrang()">
+    <h3>Demo 6: Đối tượng Text - Sự kiện onBlur (Mẫu Bài 5 BTH1)</h3>
+    <p>Nhập chữ thường vào ô bên dưới, sau đó <b>nhấn phím TAB</b> hoặc click chuột ra ngoài:</p>
+
+    <form name="form5">
+        <label>Nhập văn bản: </label>
+        <input type="text" name="txtInput" value="abc" onblur="doiChuHoa()">
+        <br><br>
+        <label>Ô tiếp theo (để chuyển focus tới): </label>
+        <input type="text" name="txtNext" placeholder="Click vào đây để kiểm tra">
+    </form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 3 - Đối tượng Window & Hộp thoại (Slide 14 - 15)</title>
+</head>
+<body onload="alert('Trang web đã tải xong (Sự kiện onLoad của Window)!')">
+    <h3>Demo 3: Các phương thức của đối tượng window</h3>
+    <p>Thử bấm từng nút dưới đây để xem hộp thoại hiện ra:</p>
+
+    <!-- Nút 1: alert() -->
+    <button onclick="window.alert('Đây là hộp thoại alert() dùng để thông báo một chiều!')">1. Thử alert()</button>
+    <br><br>
+
+    <!-- Nút 2: confirm() -->
+    <button onclick="testConfirm()">2. Thử confirm() (Có OK / Cancel)</button>
+    <br><br>
+
+    <!-- Nút 3: prompt() -->
+    <button onclick="testPrompt()">3. Thử prompt() (Có ô nhập chữ)</button>
+    <br><br>
+
+    <!-- Nút 4: open() -->
+    <button onclick="window.open('https://www.google.com', '_blank')">4. Thử window.open() (Mở Google)</button>
+
+    <div id="ketQuaWindow" style="margin-top: 15px; font-weight: bold; color: green;"></div>
+
+    <script>
+        function testConfirm() {
+            var traLoi = window.confirm("Bạn có chắc chắn muốn xóa bài viết này không?");
+            if (traLoi == true) {
+                document.getElementById("ketQuaWindow").innerText = "Bạn vừa chọn OK (True) => Đồng ý xóa.";
+            } else {
+                document.getElementById("ketQuaWindow").innerText = "Bạn vừa chọn Cancel (False) => Hủy bỏ.";
+            }
+        }
+
+        function testPrompt() {
+            var ten = window.prompt("Vui lòng nhập tên của bạn:", "Lương Duy Toàn");
+            if (ten != null && ten != "") {
+                document.getElementById("ketQuaWindow").innerText = "Xin chào bạn: " + ten;
+            } else {
+                document.getElementById("ketQuaWindow").innerText = "Bạn đã bấm Hủy hoặc không nhập tên.";
+            }
+        }
+    </script>
+</body>
+</html>

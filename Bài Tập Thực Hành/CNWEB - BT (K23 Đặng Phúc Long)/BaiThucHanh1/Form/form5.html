@@ -1,0 +1,23 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpperCase</title>
+    <link rel="stylesheet" href="styles/style5.css">
+</head>
+
+<body>
+    
+    <input type="text" id="input" onblur="convertToUpper()">
+
+    <script>
+        
+        function convertToUpper() {
+            let inputField = document.getElementById('input');
+            inputField.value = inputField.value.toUpperCase();
+        }
+        
+    </script>
+    
+</body>
+</html>

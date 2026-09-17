@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script>
+    function checkIndex() {
+      var index = document.getElementById("indexBox").value;
+      var sel = document.getElementById("selectBox");
+      if (index >= 0 && index < sel.length) {
+        sel.selectedIndex = index;
+      } else {
+        alert("Chỉ số không hợp lệ!");
+      }
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <select id="selectBox">
+      <option>Index 0</option>
+      <option>Index 1</option>
+      <option>Index 2</option>
+      <option>Index 3</option>
+    </select>
+    <input type="text" id="indexBox">
+    <button type="button" onclick="checkIndex()">Click here</button>
+  </form>
+</body>
+</html>

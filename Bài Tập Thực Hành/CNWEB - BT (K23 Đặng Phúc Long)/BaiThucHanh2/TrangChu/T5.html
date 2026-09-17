@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style5.css">
+    <title>Document</title>
+    <style>
+        #text {
+            margin-left: 0px;
+            width: 1500px;
+            overflow: hidden;
+            white-space: nowrap;
+            border: none;
+            padding: 10px;
+            font-size: 25px;
+            color: white;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="text" readonly>
+    <script>
+        let textInput = document.getElementById('text');
+        let text = "Welcome to MyShoe Shop";
+        for (let i=0; i<100; i++) {
+            text+="  ";
+        }
+        let position = 0;
+        
+        function startMarquee() {
+            textInput.value = text.slice(position) + text.slice(0, position);
+            position++;
+            if (position > text.length) {
+                position = 0; 
+            }
+        }
+       
+        // Chạy hàm startMarquee mỗi 00ms
+        setInterval(startMarquee, 100);
+    </script>
+</body>
+</html>

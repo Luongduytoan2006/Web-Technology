@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap minh hoa 1</tsitle>
+</head>
+<body>
+    
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function(e) {
+            let name = prompt("Mời bạn nhập vào tên mình: ");
+            let age  = prompt("Mời bạn nhập vào tuổi của mình: ");
+            document
+            .write( 
+            `<p>Chào bạn: <strong>${name}</strong></p>
+            <p>Tuổi của bạn là: <u>${age}</u></p>
+            <input type="button" id="buttonWel" value="Welcome">`);
+            const buttonWel = document.getElementById('buttonWel');
+            buttonWel.addEventListener('click', function(e) {
+                alert('Welcome to Javascript!');
+            });
+
+        });
+
+    </script>
+</body>
+</html>

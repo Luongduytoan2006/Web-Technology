@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="form1" action="">
+        <input type="text" name="text1">
+        <input type="text" name="text2">
+    </form>
+    <script>
+        function convert(str) {
+            let ans = '';
+            for (let ch of str) {
+                if (ch === ch.toUpperCase()) {
+                    ans += ch.toLowerCase(); // Chuyển chữ hoa thành chữ thường
+                } else {
+                    ans += ch.toUpperCase(); // Chuyển chữ thường thành chữ hoa
+                }
+            }
+            return ans;
+        }
+        let text1 = document.forms['form1'].text1;
+        text1.focus();
+        text1.addEventListener('blur', function () {
+            document.forms['form1'].text2.value = convert(text1.value);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+header{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 8px rgb(0,0,0,0.6);
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+header .logo{
+    font-size:35px;
+    color:#c72092;
+    margin: 5px 0;
+    cursor: pointer;
+    position: relative;
+    left: -4%;
+}
+
+header .logo span{
+    color:#6c14d0;
+    text-decoration: underline;
+}
+
+header ul{
+    list-style: none;
+}
+
+header ul li{
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+header ul li a:hover{
+    color:#c72092;
+}
+
+header .icons i{
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+header .icons i:hover {
+    color: #c72092;
+}

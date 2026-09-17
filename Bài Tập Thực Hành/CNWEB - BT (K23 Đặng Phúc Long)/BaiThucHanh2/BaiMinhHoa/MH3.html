@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap minh hoa 3</title>
+</head>
+<body>
+    <input type="text" id="text1">
+    <input type="button" value="+" id="btcong">
+    <input type="button" value="-" id="bttru">
+    <input type="button" value="x" id="btnhan">
+    <input type="button" value="/" id="btchia">
+    <input type="button" value="^" id="btmu">
+    <input type="text" id="text2">
+    <label>=</label>
+    <input type="text" id="text3" readonly>
+    <script>
+
+        document.getElementById('btcong').addEventListener('click',function(e) {
+            let text1 = getText1();
+            let text2 = getText2();
+            console.log(text1 + ", " + text2);
+            if (!checkIfNumber(text1)) {
+                alert('Số hạng 1 không là số!');
+                return;
+            }
+            if (!checkIfNumber(text2)) {
+                alert('Số hạng 2 không là số!');
+                return;
+            }
+            console.log(text1+ "+" +text2);
+            let result = eval(text1+ "+" +text2);
+            setText3(result);
+        });
+
+        document.getElementById('bttru').addEventListener('click',function(e) {
+            let text1 = getText1();
+            let text2 = getText2();
+            if (!checkIfNumber(text1)) {
+                alert('Số hạng 1 không là số!');
+                return;
+            }
+            if (!checkIfNumber(text2)) {
+                alert('Số hạng 2 không là số!');
+                return;
+            }
+            let result = eval(text1 + "-" + text2);
+            setText3(result);
+        });
+        document.getElementById('btnhan').addEventListener('click',function(e) {
+            let text1 = getText1();
+            let text2 = getText2();
+            if (!checkIfNumber(text1)) {
+                alert('Số hạng 1 không là số!');
+                return;
+            }
+            if (!checkIfNumber(text2)) {
+                alert('Số hạng 2 không là số!');
+                return;
+            }
+            let result = eval(text1 + "*" + text2);
+            setText3(result);
+        });
+
+        document.getElementById('btchia').addEventListener('click',function(e) {
+            let text1 = getText1();
+            let text2 = getText2();
+            if (!checkIfNumber(text1)) {
+                alert('Số hạng 1 không là số!');
+                return;
+            }
+            if (!checkIfNumber(text2)) {
+                alert('Số hạng 2 không là số!');
+                return;
+            }
+            if (Number(text2) === 0) {
+                alert('Số hạng 2 không thể là 0!');
+                return;
+            }
+            let result = eval(text1 + "/" + text2);
+            setText3(result);
+        });
+        document.getElementById('btmu').addEventListener('click',function(e) {
+            let text1 = getText1();
+            let text2 = getText2();
+            if (!checkIfNumber(text1)) {
+                alert('Số hạng 1 không là số!');
+                return;
+            }
+            if (!checkIfNumber(text2)) {
+                alert('Số hạng 2 không là số!');
+                return;
+            }
+            let result = eval(text1+ "**" + text2);
+            setText3(result);
+        });
+
+        function getText1() {
+            return document.getElementById('text1').value;
+        }
+
+        function getText2() {
+            return document.getElementById('text2').value;
+        }
+
+        function setText3(text) {
+            console.log(text);
+            document.getElementById('text3').value = text;
+        }
+
+        function checkIfNumber(value) {
+            return !isNaN(Number(value)) && value.trim() !== '';
+        }
+    </script>
+</body>
+</html>
