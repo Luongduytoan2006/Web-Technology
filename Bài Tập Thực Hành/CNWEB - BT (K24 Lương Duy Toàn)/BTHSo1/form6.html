@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bài Thực Hành 1 - Trang Chủ</title>
 </head>
-
-<body>
-    <iframeset Border=1 rows="80, *, 80">
-        <iframe name="T1" src="T1.htm">
-            <iframeset Border=1 cols="45%, *">
-                <iframe name="T2" src="T2.htm">
-                <iframe name="T3" src="T3.htm">
-            </iframeset>
-            <iframe name="T4" src="T4.htm"></iframe>
-    </iframeset>
-</body>
-
+<frameset rows="80,*,60" frameborder="1" border="1">
+    <frame name="T1" src="T1.html">
+    <frameset cols="18%,*,22%">
+        <frame name="T2" src="T2.html">
+        <frame name="T3" src="T3.html">
+        <frame name="T4" src="T4.html">
+    </frameset>
+    <frame name="T5" src="T5.html">
+</frameset>
 </html>

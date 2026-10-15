@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Form 33 - Đổi chữ vừa hoa vừa thường</title>
+    <script>
+        function doiChuHoaThuong() {
+            var str = document.f1.text1.value;
+            var result = "";
+
+            // Duyệt từng ký tự: chữ thường thành hoa, chữ hoa thành thường
+            for (var i = 0; i < str.length; i++) {
+                var c = str.charAt(i);
+                if (c >= 'a' && c <= 'z') {
+                    result += c.toUpperCase();
+                } else if (c >= 'A' && c <= 'Z') {
+                    result += c.toLowerCase();
+                } else {
+                    result += c;
+                }
+            }
+
+            // Hiển thị kết quả ở ô text2
+            document.f1.text2.value = result;
+        }
+    </script>
+</head>
+<body onload="document.f1.text1.focus()" style="font-family: Arial, sans-serif; padding: 30px;">
+    <h3>Bài tập chuyển đổi chữ hoa / chữ thường</h3>
+    <form name="f1" action="">
+        <table cellpadding="6" cellspacing="0" border="0">
+            <tr>
+                <td><label for="text1">Nhập văn bản (text1):</label></td>
+                <td><input type="text" name="text1" id="text1" size="30" onblur="doiChuHoaThuong()"></td>
+            </tr>
+            <tr>
+                <td><label for="text2">Kết quả (text2):</label></td>
+                <td><input type="text" name="text2" id="text2" size="30" readonly style="background-color: #f5f5f5;"></td>
+            </tr>
+        </table>
+    </form>
+    <p style="font-size: 13px; color: #666; margin-top: 15px;">
+        <i>Ghi chú: Khi mở trang web, con trỏ tự động đặt ở ô text1 (Focus). Khi gõ xong và bấm Tab hoặc click ra ngoài (Blur), kết quả hoán đổi hoa/thường sẽ hiển thị ở ô text2.</i>
+    </p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Form 44 - Chọn phần tử trong Select box</title>
+    <script>
+        function chonChiMuc() {
+            var idx = parseInt(document.f1.txtIndex.value);
+            var sel = document.f1.selBox;
+
+            if (!isNaN(idx) && idx >= 0 && idx < sel.length) {
+                sel.selectedIndex = idx;
+            } else {
+                alert("Chỉ số không hợp lệ! Vui lòng nhập số từ 0 đến " + (sel.length - 1));
+            }
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 30px;">
+    <h3>Chọn phần tử theo chỉ mục (Index)</h3>
+    <form name="f1" action="">
+        <select name="selBox">
+            <option>Index 0</option>
+            <option>Index 1</option>
+            <option>Index 2</option>
+            <option>Index 3</option>
+        </select>
+        <input type="text" name="txtIndex" size="8">
+        <input type="button" value="Click here" onclick="chonChiMuc()">
+    </form>
+</body>
+</html>

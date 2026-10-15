@@ -1,11 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form 3 - Khoa Công nghệ thông tin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            color: #333;
+        }
+
+        /* Phần đầu trang (Header) */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 2px solid #0056b3;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .header-title {
+            color: #004085;
+        }
+
+        .header-title h3 {
+            margin: 0;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .header-title h2 {
+            margin: 0;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        .header-search input {
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Menu ngang chính */
+        .main-menu {
+            background-color: #0056b3;
+            margin: 8px 0;
+            border-radius: 4px;
+        }
+
+        .main-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .main-menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px 12px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .main-menu li a:hover {
+            background-color: #003d82;
+        }
+
+        /* Đường dẫn Breadcrumb */
+        .breadcrumb {
+            font-size: 13px;
+            color: #666;
+            margin: 8px 0 15px 0;
+        }
+
+        /* Bố cục thân trang 2 cột */
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Cột bên trái */
+        .sidebar {
+            width: 25%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            height: fit-content;
+        }
+
+        .sidebar-title {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px;
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar li a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #333;
+            font-size: 13px;
+        }
+
+        .sidebar li a:hover {
+            background-color: #f0f4f8;
+            color: #0056b3;
+        }
+
+        /* Cột nội dung bên phải */
+        .content {
+            width: 75%;
+        }
+
+        .content-title {
+            color: #0056b3;
+            font-size: 16px;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .news-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .news-item img {
+            width: 130px;
+            height: 90px;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .news-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 14px;
+            color: #004085;
+        }
+
+        .news-date {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .news-desc {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.4;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <img src="Images/logo-k_cntt.png" alt="Logo Khoa CNTT">
+            <div class="header-title">
+                <h3>Trường Đại học Bách khoa</h3>
+                <h2>Khoa Công nghệ thông tin</h2>
+            </div>
+        </div>
+        <div class="header-search">
+            <input type="text" placeholder="Tìm kiếm thông tin...">
+        </div>
+    </div>
+
+    <!-- Thanh Menu Ngang -->
+    <div class="main-menu">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">GIỚI THIỆU</a></li>
+            <li><a href="#">TUYỂN SINH</a></li>
+            <li><a href="#">ĐÀO TẠO</a></li>
+            <li><a href="#">NGHIÊN CỨU KHOA HỌC</a></li>
+            <li><a href="#">HỢP TÁC</a></li>
+            <li><a href="#">SINH VIÊN</a></li>
+            <li><a href="#">CỰU SINH VIÊN</a></li>
+            <li><a href="#">LIÊN HỆ</a></li>
+        </ul>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        Trang chủ / Khoa Công nghệ thông tin
+    </div>
+
+    <!-- Bố cục 2 cột -->
+    <div class="container">
+        <!-- Cột trái: Danh mục -->
+        <div class="sidebar">
+            <h4 class="sidebar-title">K. CÔNG NGHỆ THÔNG TIN</h4>
+            <ul>
+                <li><a href="#">Thông báo</a></li>
+                <li><a href="#">Tin tức hoạt động</a></li>
+                <li><a href="#">Đào tạo đại học</a></li>
+                <li><a href="#">Đào tạo sau đại học</a></li>
+                <li><a href="#">Nghiên cứu khoa học</a></li>
+                <li><a href="#">Biểu mẫu của Khoa</a></li>
+                <li><a href="#">Góp ý với Khoa</a></li>
+            </ul>
+        </div>
+
+        <!-- Cột phải: Tin tức -->
+        <div class="content">
+            <h3 class="content-title">KHOA CNTT - TIN TỨC</h3>
+
+            <div class="news-item">
+                <img src="Images/image000.jpg" alt="Tin tức 1">
+                <div class="news-info">
+                    <h4>Hơn 400 sinh viên IT tham gia Ngày hội việc làm "IT JOB FAIR 2021"</h4>
+                    <div class="news-date">18/04/2021 13:09</div>
+                    <p class="news-desc">Sáng ngày 17/04/2021, Khoa Công nghệ thông tin tổ chức Ngày hội việc làm "IT JOB FAIR 2021" tại Trung tâm Học liệu và Truyền thông, Trường Đại học Bách khoa, ĐH Đà Nẵng.</p>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <img src="Images/image001.jpg" alt="Tin tức 2">
+                <div class="news-info">
+                    <h4>Nguồn nhân lực đáp ứng yêu cầu phát triển Đà Nẵng với trụ cột Công nghiệp – công nghệ cao</h4>
+                    <div class="news-date">11/04/2021 20:24</div>
+                    <p class="news-desc">(DSA) – Trong bối cảnh mới, thành phố Đà Nẵng đã xác định phát triển dựa trên 3 trụ cột: Du lịch ; Công nghiệp – công nghệ cao và Kinh tế biển...</p>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <img src="Images/image002.jpg" alt="Tin tức 3">
+                <div class="news-info">
+                    <h4>CUỘC THI "DUT PROGRAMMING CHALLENGE 2021"</h4>
+                    <div class="news-date">03/04/2021 16:31</div>
+                    <p class="news-desc">CUỘC THI "DUT PROGRAMMING CHALLENGE 2021"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

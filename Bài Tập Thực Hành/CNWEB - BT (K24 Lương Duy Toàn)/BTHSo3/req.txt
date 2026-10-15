@@ -1,0 +1,59 @@
+- Khi đã đăng nhập thì có thêm các chức năng:
++ chen.php: cho phép chèn thông tin bảng nhanvien
++ capnhat.php: cho phép cập nhật thông tin bảng phongban
++ xoa.php: cho phép xoá nhân viên bất kì của bảng nhanvien
++ xoatatca.php: cho phép xoá nhiều nhân viên cùng lúc của bảng nhanvien
+- Khi chưa đăng nhập hệ thống:
++ xemthongtinnv.php: cho phép truy xuất thông tin bảng nhanvien
++ xemthongtinpb.php: cho phép truy xuất thông tin bảng phongban và liệt kê tất cả các nhân viên theo từng phòng ban, trong lúc xem thì phải gọi đến trang xemthongtinNVPB.php?IDPB='mapb tren csdl' với yêu cầu là phải query lại db để lấy dữ liệu mới nhất
++ timkiem.php: cho phép tìm kiếm thông tin bảng nhanvien theo các tiêu chí khác nhau (radio button giữa: IDNV Hoten Diachi)
+yêu cầu UI: hiển thị bảng
+yêu cầu phát triển: tìm 1 cái template ui php đẹp rồi áp dụng cho lần sửa app sau, lần chạy 1 mục tiêu là hoàn thiệu các chức năng cùng yêu cầu UI cơ bản
+
+
+Action
+-- 1. Tạo cơ sở dữ liệu (nếu chưa có) và chọn CSDL (tên database tổng thể là DULIEU)
+    CREATE DATABASE IF NOT EXISTS DULIEU
+    CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+    USE DULIEU;
+
+    -- 2. Tạo bảng admin (Tài khoản quản trị)
+    CREATE TABLE IF NOT EXISTS admin (
+        username VARCHAR(50) PRIMARY KEY,
+        pass VARCHAR(255) NOT NULL
+    );
+
+    -- 3. Tạo bảng phongban (Cần tạo trước để nhanvien tham chiếu khóa ngoại)
+    CREATE TABLE IF NOT EXISTS phongban (
+        IDPB VARCHAR(10) PRIMARY KEY,
+        Tenpb VARCHAR(100) NOT NULL,
+        Mota TEXT
+    );
+
+    -- 4. Tạo bảng nhanvien (Liên kết với phongban qua IDPB)
+    CREATE TABLE IF NOT EXISTS nhanvien (
+        IDNV VARCHAR(10) PRIMARY KEY,
+        Hoten VARCHAR(100) NOT NULL,
+        IDPB VARCHAR(10),
+        Diachi VARCHAR(255),
+        CONSTRAINT fk_nhanvien_phongban
+            FOREIGN KEY (IDPB) REFERENCES phongban(IDPB)
+            ON DELETE SET NULL
+            ON UPDATE CASCADE
+    );
+
+    -- 5. Chèn dữ liệu mẫu để test website / bài tập
+    INSERT INTO admin (username, pass) VALUES
+    ('user01', '123456'), ('user02', 'abc123');
+
+    INSERT INTO phongban (IDPB, Tenpb, Mota) VALUES
+    ('PB01', 'Phòng ban 1', 'Phòng Tổ chức'),
+    ('PB02', 'Phòng ban 2', 'Phòng Kế toán'),
+    ('PB03', 'Phòng ban 3', 'Phòng Kỹ thuật');
+
+    INSERT INTO nhanvien (IDNV, Hoten, IDPB, Diachi) VALUES
+    ('NV01', 'Lê A', 'PB01', 'DaNa'),
+    ('NV02', 'Trần B', 'PB02', 'QTrị'),
+    ('NV03', 'Mạc C', 'PB01', 'Huế'),
+    ('NV04', 'Đinh D', 'PB03', 'QNgai');

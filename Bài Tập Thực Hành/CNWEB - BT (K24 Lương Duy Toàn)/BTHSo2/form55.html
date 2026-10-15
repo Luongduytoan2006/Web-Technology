@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Form 55 - Hiển thị chỉ mục phần tử được chọn</title>
+    <script>
+        function hienThiChiMuc() {
+            var sel = document.f1.selBox;
+            document.f1.txtValue.value = sel.selectedIndex;
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 30px;">
+    <h3>Lấy chỉ mục (Index) của phần tử đang chọn</h3>
+    <form name="f1" action="">
+        <select name="selBox">
+            <option>Index 0</option>
+            <option>Index 1</option>
+            <option>Index 2</option>
+            <option>Index 3</option>
+        </select>
+        <input type="text" name="txtValue" size="8" readonly style="background-color: #f5f5f5;">
+        <input type="button" value="Click here" onclick="hienThiChiMuc()">
+    </form>
+</body>
+</html>

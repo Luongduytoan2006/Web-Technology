@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Form 11 - Xử lý lỗi đăng nhập Login</title>
+    <script>
+        function checkLogin() {
+            var u = document.f.username.value;
+            var p = document.f.password.value;
+
+            // Kiểm tra để trống Username
+            if (u === "") {
+                alert("Vui lòng nhập Username!");
+                document.f.username.focus();
+                return false;
+            }
+
+            // Kiểm tra để trống Password
+            if (p === "") {
+                alert("Vui lòng nhập Password!");
+                document.f.password.focus();
+                return false;
+            }
+
+            // Thông báo đăng nhập thành công
+            alert("Đăng nhập thành công! Xin chào " + u);
+            return true;
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif;">
+    <form name="f" action="" method="post" onsubmit="return checkLogin();">
+        <table bgcolor="#ccffcc" align="center" cellpadding="5" cellspacing="0" style="margin-top: 50px; border: 1px solid #99cc99; border-radius: 4px;">
+            <tr>
+                <th colspan="2" align="center" style="font-size: 20px; padding-bottom: 10px;">Login</th>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" style="padding-top: 10px;">
+                    <input type="submit" value="OK">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
