@@ -1,0 +1,21 @@
+Tạo CSDL DULIEU
+Tạo bảng sinhvien(id, name, age, university) id khoá chính
+Xây ứng dụng quản lý thông tin sinh viên theo mô hình MVC
+
+Tạo folder BTHSo4 (hiện code đã tạo bên này D:\xampp\htdocs\BTHSo4\), bên trong có
+Folder Controller (C_Student.php), Model (E_Student.php, M_Student.php), View (StudentList.html, StudentDetail.html, ...), và file index.php
+
+
+Các chức năng chính:
+1. Xem thông tin
+2, Chèn thông tin
+3. Cập nhật thông tin
+4. Xoá thông tin
+5. Tìm kiếm thông tin
+
+Danh sách sinh viên show ra ở trang 1:
+1. Họ tên
+2. họ tên
+3. họ tên
+
+Ấn vào sinh viên ra chi tiết sinh viên

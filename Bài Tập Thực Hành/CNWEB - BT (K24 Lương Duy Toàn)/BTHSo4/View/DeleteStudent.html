@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Xóa sinh viên</title>
+</head>
+<body>
+    <h2>Xóa thông tin sinh viên</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>ID</th>
+            <th>Họ tên</th>
+            <th>Tuổi</th>
+            <th>Trường</th>
+            <th>Thao tác</th>
+        </tr>
+        <?php
+        if (!empty($studentList)) {
+            for ($i = 1; $i <= sizeof($studentList); $i++) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($studentList[$i]->id) . "</td>";
+                echo "<td>" . htmlspecialchars($studentList[$i]->name) . "</td>";
+                echo "<td>" . htmlspecialchars($studentList[$i]->age) . "</td>";
+                echo "<td>" . htmlspecialchars($studentList[$i]->university) . "</td>";
+                echo "<td><a href='C_Student.php?mod3=1&del_id=" . $studentList[$i]->id . "' onclick=\"return confirm('Bạn có chắc muốn xóa sinh viên này?');\">Xóa</a></td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='5'>Chưa có dữ liệu</td></tr>";
+        }
+        ?>
+    </table>
+    <br>
+    <p><a href="../index.php">Home page</a></p>
+</body>
+</html>

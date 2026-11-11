@@ -1,0 +1,67 @@
+/* giao diện cơ bản giống BTH số 1, 2 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    padding: 20px;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #003366;
+}
+
+/* bảng căn giữa */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th, td {
+    border: 1px solid #99cc99;
+    padding: 6px 10px;
+}
+
+th {
+    background-color: #ccffcc;
+}
+
+td[colspan] {
+    text-align: center;
+}
+
+/* bảng nằm trong form (login, chèn, sửa, tìm kiếm) tô nền xanh nhạt như đề */
+form table {
+    background-color: #ccffcc;
+}
+
+/* menu trang chủ: chữ đỏ, nghiêng, đậm như T2.html */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+ul a {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul a:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: #003366;
+}

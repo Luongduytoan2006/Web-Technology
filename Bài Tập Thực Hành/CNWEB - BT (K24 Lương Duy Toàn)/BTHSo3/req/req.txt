@@ -8,7 +8,6 @@
 + xemthongtinpb.php: cho phép truy xuất thông tin bảng phongban và liệt kê tất cả các nhân viên theo từng phòng ban, trong lúc xem thì phải gọi đến trang xemthongtinNVPB.php?IDPB='mapb tren csdl' với yêu cầu là phải query lại db để lấy dữ liệu mới nhất
 + timkiem.php: cho phép tìm kiếm thông tin bảng nhanvien theo các tiêu chí khác nhau (radio button giữa: IDNV Hoten Diachi)
 yêu cầu UI: hiển thị bảng
-yêu cầu phát triển: tìm 1 cái template ui php đẹp rồi áp dụng cho lần sửa app sau, lần chạy 1 mục tiêu là hoàn thiệu các chức năng cùng yêu cầu UI cơ bản
 
 
 Action

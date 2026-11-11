@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sinh viên</title>
+</head>
+<body>
+    <h2>Danh sách sinh viên:</h2>
+    <?php
+    if (!empty($studentList)) {
+        for ($i = 1; $i <= sizeof($studentList); $i++) {
+            echo "<p>" . $i . ". <a href='?stid=" . $studentList[$i]->id . "'>" . htmlspecialchars($studentList[$i]->name) . "</a></p>";
+        }
+    } else {
+        echo "<p>Chưa có dữ liệu sinh viên nào.</p>";
+    }
+    ?>
+    <br>
+    <p><a href="../index.php">Home page</a></p>
+</body>
+</html>

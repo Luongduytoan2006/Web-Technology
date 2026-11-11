@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm sinh viên</title>
+</head>
+<body>
+    <h2>Thêm thông tin sinh viên</h2>
+    <form action="C_Student.php?mod1=1" method="POST">
+        <table border="0">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" placeholder="Nhập tên sinh viên" required size="40"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="number" name="age" placeholder="Nhập tuổi" required size="40"></td>
+            </tr>
+            <tr>
+                <td>University</td>
+                <td><input type="text" name="university" placeholder="Nhập tên trường" required size="40"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <br>
+                    <input type="submit" name="insert" value=" OK ">
+                    <input type="reset" name="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <p><a href="../index.php">Home page</a></p>
+</body>
+</html>

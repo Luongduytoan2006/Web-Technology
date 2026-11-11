@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cập nhật sinh viên</title>
+</head>
+<body>
+    <h2>Cập nhật thông tin sinh viên</h2>
+
+    <?php if (isset($studentEdit) && $studentEdit != null): ?>
+        <h3>Chỉnh sửa sinh viên (ID: <?php echo htmlspecialchars($studentEdit->id); ?>)</h3>
+        <form action="C_Student.php?mod2=1" method="POST">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($studentEdit->id); ?>">
+            <table border="0">
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" value="<?php echo htmlspecialchars($studentEdit->name); ?>" required size="40"></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" name="age" value="<?php echo htmlspecialchars($studentEdit->age); ?>" required size="40"></td>
+                </tr>
+                <tr>
+                    <td>University</td>
+                    <td><input type="text" name="university" value="<?php echo htmlspecialchars($studentEdit->university); ?>" required size="40"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <br>
+                        <input type="submit" name="update" value=" Cập nhật ">
+                        <a href="C_Student.php?mod2=1"><button type="button">Hủy</button></a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    <?php else: ?>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>ID</th>
+                <th>Họ tên</th>
+                <th>Tuổi</th>
+                <th>Trường</th>
+                <th>Thao tác</th>
+            </tr>
+            <?php
+            if (!empty($studentList)) {
+                for ($i = 1; $i <= sizeof($studentList); $i++) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($studentList[$i]->id) . "</td>";
+                    echo "<td>" . htmlspecialchars($studentList[$i]->name) . "</td>";
+                    echo "<td>" . htmlspecialchars($studentList[$i]->age) . "</td>";
+                    echo "<td>" . htmlspecialchars($studentList[$i]->university) . "</td>";
+                    echo "<td><a href='C_Student.php?mod2=1&edit_id=" . $studentList[$i]->id . "'>Cập nhật</a></td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5'>Chưa có dữ liệu</td></tr>";
+            }
+            ?>
+        </table>
+    <?php endif; ?>
+
+    <br>
+    <p><a href="../index.php">Home page</a></p>
+</body>
+</html>

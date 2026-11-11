@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin chi tiết sinh viên</title>
+</head>
+<body>
+    <h2>Chi tiết sinh viên:</h2>
+    <?php
+    if ($student) {
+        echo "<p>ID: <b>" . htmlspecialchars($student->id) . "</b></p>";
+        echo "<p>Name: <b>" . htmlspecialchars($student->name) . "</b></p>";
+        echo "<p>Age: " . htmlspecialchars($student->age) . "</p>";
+        echo "<p>University: " . htmlspecialchars($student->university) . "</p><br>";
+    } else {
+        echo "<p>Không tìm thấy sinh viên!</p>";
+    }
+    ?>
+    <p><a href="javascript:history.back()">Back</a></p>
+    <p><a href="../index.php">Home page</a></p>
+</body>
+</html>

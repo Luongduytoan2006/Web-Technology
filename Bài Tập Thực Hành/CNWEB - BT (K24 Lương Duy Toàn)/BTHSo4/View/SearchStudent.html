@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm kiếm sinh viên</title>
+</head>
+<body>
+    <h2>Tìm kiếm thông tin sinh viên</h2>
+    <form action="C_Student.php?mod4=1" method="POST">
+        <table border="0">
+            <tr>
+                <td>Từ khóa tìm kiếm:</td>
+                <td><input type="text" name="search_value" value="<?php echo isset($_POST['search_value']) ? htmlspecialchars($_POST['search_value']) : ''; ?>" required size="30"></td>
+            </tr>
+            <tr>
+                <td>Tìm theo:</td>
+                <td>
+                    <label><input type="radio" name="search_field" value="name" <?php if (!isset($_POST['search_field']) || $_POST['search_field'] == 'name') echo 'checked'; ?>> Tên</label>
+                    <label><input type="radio" name="search_field" value="age" <?php if (isset($_POST['search_field']) && $_POST['search_field'] == 'age') echo 'checked'; ?>> Tuổi</label>
+                    <label><input type="radio" name="search_field" value="university" <?php if (isset($_POST['search_field']) && $_POST['search_field'] == 'university') echo 'checked'; ?>> Trường</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <br>
+                    <input type="submit" name="search" value=" Tìm kiếm ">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+
+    <?php if (isset($searchResults)): ?>
+        <h3>Kết quả tìm kiếm:</h3>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>ID</th>
+                <th>Họ tên</th>
+                <th>Tuổi</th>
+                <th>Trường</th>
+            </tr>
+            <?php
+            if (!empty($searchResults)) {
+                for ($i = 1; $i <= sizeof($searchResults); $i++) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($searchResults[$i]->id) . "</td>";
+                    echo "<td>" . htmlspecialchars($searchResults[$i]->name) . "</td>";
+                    echo "<td>" . htmlspecialchars($searchResults[$i]->age) . "</td>";
+                    echo "<td>" . htmlspecialchars($searchResults[$i]->university) . "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='4'>Không tìm thấy kết quả nào phù hợp!</td></tr>";
+            }
+            ?>
+        </table>
+    <?php endif; ?>
+
+    <br>
+    <p><a href="../index.php">Home page</a></p>
+</body>
+</html>
