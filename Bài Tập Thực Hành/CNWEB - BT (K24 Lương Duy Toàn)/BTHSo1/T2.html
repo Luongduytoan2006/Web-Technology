@@ -23,21 +23,38 @@
             font-weight: bold;
             text-decoration: none;
             font-size: 16px;
+            cursor: pointer;
         }
         a:hover {
             text-decoration: underline;
             color: darkred;
         }
     </style>
+    <script>
+        function openInT3(e, url) {
+            try {
+                var targetFrame = (window.parent && window.parent.frames['T3']) || 
+                                  (window.top && window.top.frames['T3']);
+                if (targetFrame) {
+                    targetFrame.location.href = url;
+                    if (e && e.preventDefault) e.preventDefault();
+                    return false;
+                }
+            } catch (err) {
+                console.log("Fallback to HTML target:", err);
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
     <ul>
-        <li><a href="T3.html" target="T3">Trang chủ</a></li>
-        <li><a href="form1.html" target="T3">Mục 1</a></li>
-        <li><a href="form2.html" target="T3">Mục 2</a></li>
-        <li><a href="form3.html" target="T3">Mục 3</a></li>
-        <li><a href="form4.html" target="T3">Mục 4</a></li>
-        <li><a href="form5.html" target="T3">Mục 5</a></li>
+        <li><a href="T3.html" target="T3" onclick="return openInT3(event, 'T3.html')">Trang chủ</a></li>
+        <li><a href="form1.html" target="T3" onclick="return openInT3(event, 'form1.html')">Mục 1</a></li>
+        <li><a href="form2.html" target="T3" onclick="return openInT3(event, 'form2.html')">Mục 2</a></li>
+        <li><a href="form3.html" target="T3" onclick="return openInT3(event, 'form3.html')">Mục 3</a></li>
+        <li><a href="form4.html" target="T3" onclick="return openInT3(event, 'form4.html')">Mục 4</a></li>
+        <li><a href="form5.html" target="T3" onclick="return openInT3(event, 'form5.html')">Mục 5</a></li>
     </ul>
 </body>
 </html>

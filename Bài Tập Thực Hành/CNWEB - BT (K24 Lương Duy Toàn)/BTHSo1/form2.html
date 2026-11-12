@@ -3,34 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 2 - Ví dụ về tạo form</title>
 </head>
 
-<body>
-    <form style="background-color: #aadddd; padding: 15px; width: 350px;">
-        <h3 align="center">VÍ DỤ VỀ TẠO FORM</h3>
-
-        <table>
+<body bgcolor="#aadddd" style="background-color: #aadddd;">
+    <form>
+        <table align="center">
+            <tr>
+                <th colspan="2">
+                    <h3 style="color: red; margin: 15px 0;"><font color="red">VÍ DỤ VỀ TẠO FORM</font></h3>
+                </th>
+            </tr>
             <tr>
                 <td>Text box:</td>
                 <td><input type="text" size="20"></td>
             </tr>
             <tr>
                 <td>Text Area:</td>
-                <td><textarea rows="3" cols="20"></textarea></td>
+                <td><textarea rows="2" cols="20"></textarea></td>
             </tr>
             <tr>
                 <td>File box:</td>
                 <td><input type="file"></td>
             </tr>
             <tr>
-                <td>Radio button:</td>
-                <td><input type="radio" name="rd"></td>
+                <td colspan="2"><input type="radio" name="rd"> Radio button</td>
             </tr>
             <tr>
-                <td>Check box:</td>
-                <td><input type="checkbox"></td>
+                <td colspan="2"><input type="checkbox"> Check box</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
             </tr>
         </table>
     </form>

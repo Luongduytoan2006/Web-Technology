@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="handleFocus()" style="max-width: 400px; margin: 0 auto; padding: 20px;">
+    <h2>Form 33: Thay đổi chữ hoa thành thường, thường thành hoa khi bắt sự kiện onBlur</h2>
+    <form name="f1">
+        <input id="i1" type="text" onblur="handleBlur()" placeholder="Enter text here">
+        <input id="i2" type="text" placeholder="Get the text here">
+    </form>
+    <script>
+
+        const input1 = document.querySelector('#i1');
+        const input2 = document.querySelector('#i2');
+        function handleBlur() {
+            const data = input1.value;
+            let result = "";
+
+            for (let i = 0; i < data.length; i++) {
+                const code = data.charCodeAt(i);
+
+                if (code >= 97 && code <= 122) {
+
+                    result += String.fromCharCode(code - 32);
+                } else if (code >= 65 && code <= 90) {
+                    result += String.fromCharCode(code + 32);
+                } else {
+
+                    result += String.fromCharCode(code);
+                }
+            }
+
+            input2.value = result;
+        }
+
+        function handleFocus() {
+            input1.focus();
+        }
+    </script>
+</body>
+
+</html>

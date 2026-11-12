@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="max-width: 400px; margin: 0 auto; padding: 20px;">
+    <h2>Form 4: Thay đổi màu nền khi nhập dữ liệu và nhấn OK</h2>
+    <form onsubmit=handleSubmit(event)>
+        <input type="text" placeholder="Enter text here">
+        <button type="submit">OK</button>
+    </form>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const input = event.target.querySelector('input');
+            const body = document.body;
+            body.style.backgroundColor = input.value
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="handleFocus()" style="max-width: 400px; margin: 0 auto; padding: 20px;">
+    <h2>Form 5: Chuyển đổi chữ thường thành chữ hoa, khi rời khỏi ô input</h2>
+
+    <form>
+        <input id="i1" type="text" onblur="handleBlur()" placeholder="Enter text here">
+
+    </form>
+    <script>
+        const input1 = document.querySelector('#i1');
+
+        function handleBlur() {
+            input1.value = input1.value.toUpperCase();
+        }
+        function handleFocus() {
+            input1.focus();
+        }
+    </script>
+</body>
+
+</html>

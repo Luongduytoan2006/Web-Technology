@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body style="padding: 20px 0 0 0;">
+
+    <h2>Nhập thông tin sách</h2>
+    <form id="bookForm">
+        <label class="label" for="title">Tiêu đề:</label>
+        <input class="input-value" type="text" id="title" name="title" required><br>
+
+        <label class="label" for="author">Tác giả:</label>
+        <input class="input-value" type="text" id="author" name="author" required><br>
+
+        <label class="label" for="content">Nội dung:</label>
+        <textarea class="textarea-value" id="content" name="content" rows="3" required></textarea><br>
+
+        <label class="label" for="price">Giá:</label>
+        <input class="input-value" type="number" id="price" name="price" required><br>
+
+        <button type="submit">Thêm sách</button>
+    </form>
+
+    <div id="result">
+        <h3>Danh sách sách:</h3>
+    </div>
+
+    <script>
+        const titleInput = document.getElementById("title");
+        const authorInput = document.getElementById("author");
+        const contentInput = document.getElementById("content");
+        const priceInput = document.getElementById("price");
+        const bookForm = document.getElementById("bookForm");
+        function Book(title, author, content) {
+            this.title = title;
+            this.author = author;
+            this.content = content;
+            this.price = 0;
+
+            this.AddPrice = function (amount) {
+                with (this) {
+                    price = amount;
+                }
+            };
+        }
+
+        bookForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Lấy dữ liệu từ form
+            let title = titleInput.value;
+            let author = authorInput.value;
+            let content = contentInput.value;
+            let price = parseFloat(priceInput.value);
+
+            // Tạo đối tượng sách
+            var MyBook = new Book(title, author, content);
+            MyBook.AddPrice(price);
+
+            // Hiển thị thêm vào danh sách (không ghi đè)
+            let output = "<div class='book-item'>";
+            with (MyBook) {
+                output += "<strong>Tên:</strong> " + title + "<br>";
+                output += "<strong>Tác giả:</strong> " + author + "<br>";
+                output += "<strong>Nội dung:</strong> " + content + "<br>";
+                output += "<strong>Giá:</strong> " + price + "<br>";
+            }
+            output += "</div>";
+
+            document.getElementById("result").innerHTML += output;
+            document.getElementById("bookForm").reset();
+        });
+        const inititalValue = () => {
+            titleInput.value = "Công nghệ Web";
+            authorInput.value = "Nguyễn Văn A";
+            contentInput.value = "Sách về lập trình JavaScript";
+            priceInput.value = 200000;
+            bookForm.dispatchEvent(new Event('submit'));
+        }
+        inititalValue();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="frame-body">
+    <aside class="sidebar">
+        <div class="sidebar-section">
+
+            <ul class="sidebar-menu">
+                <li>
+                    <h3 class="sidebar-title">K. CÔNG NGHỆ THÔNG TIN</h3>
+                </li>
+                <li><a href="content-news.html" target="contentFrame" onclick="setActive(this)">Thông báo</a></li>
+                <li><a href="content-activities.html" target="contentFrame" onclick="setActive(this)">Tin tức hoạt
+                        động</a></li>
+                <li><a href="content-training.html" target="contentFrame" onclick="setActive(this)" class="active">Đào
+                        tạo đại học</a></li>
+                <li><a href="content-graduate.html" target="contentFrame" onclick="setActive(this)">Đào tạo sau đại
+                        học</a></li>
+                <li><a href="content-research.html" target="contentFrame" onclick="setActive(this)">Nghiên cứu khoa
+                        học</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <script>
+        function setActive(element) {
+            document.querySelectorAll('.sidebar-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

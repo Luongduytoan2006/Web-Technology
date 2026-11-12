@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body2">
+    <form class="form2">
+        <h1 class="title2">VÍ DỤ VỀ TẠO FORM</h1>
+        <table>
+            <tr>
+                <td class="label2">Text box:</td>
+                <td><input type="text" style="width: 180px;" name="textbox"></td>
+            </tr>
+            <tr>
+                <td class="label2">Text Area:</td>
+                <td>
+                    <textarea style="width: 180px;" name="textarea" rows="3" cols="20"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="label2">File box:</td>
+                <td>
+                    <input type="text" style="width: 180px;" id="filePosition">
+                    <input type="button" value="Browse..." onclick="document.getElementById('filebox').click()">
+                    <input type="file" id="filebox" style="display: none;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="radio" name="radio" value="option1"> Radio button
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="checkbox" value="option1"> Check box
+                </td>
+            </tr>
+            <tr>
+                <td class="button2" colspan="2">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        const fileBox = document.getElementById('filebox');
+        const filePosition = document.getElementById('filePosition');
+        fileBox.addEventListener('change', (event) => {
+            console.log(event.target.files);
+
+            const file = event.target.files[0];
+            if (file) {
+                filePosition.value = file.name;
+            } else {
+                filePosition.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

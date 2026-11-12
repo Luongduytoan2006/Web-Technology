@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="handleFocus()" style="max-width: 400px; margin: 0 auto; padding: 20px;">
+    <h2>Form 44: Khi người sử dụng nhập một số vào ô textbox và click nút button thì
+        phần tử trong select box có chỉ mục bằng số được nhập sẽ được chọn</h2>
+
+    <form name="f1">
+        <input id="i1" type="text" placeholder="Enter text here">
+        <button type="button" onclick="handleButtonClick()">Submit</button>
+        <select id="s1">
+            <option> other</option>
+        </select>
+    </form>
+    <script>
+        const input1 = document.querySelector('#i1');
+        const select1 = document.querySelector('#s1');
+        const max = 100;
+        const initialValueSelect = () => {
+            select1.innerHTML = Array.from({ length: max }, (_, i) => `<option>${i + 1}</option>`).join('') + `<option> other</option>`;
+        }
+        initialValueSelect()
+        function handleButtonClick() {
+            if (input1.value < 1 || input1.value > max) {
+                select1.selectedIndex = max;
+                return;
+            }
+            select1.selectedIndex = input1.value - 1;
+        }
+
+        function handleFocus() {
+            input1.focus();
+        }
+    </script>
+</body>
+
+</html>

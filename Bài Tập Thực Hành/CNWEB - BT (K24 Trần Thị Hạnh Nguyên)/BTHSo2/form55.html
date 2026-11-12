@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="handleFocus()" style="max-width: 400px; margin: 0 auto; padding: 20px;">
+    <h2>Form 55: Khi người sử dụng chọn phần tử trong select box và nhấn nút button
+        thì giá trị chỉ mục sẽ được hiển thị ở ô textbox</h2>
+    <form name="f1">
+
+        <select id="s1">
+            <option> 1</option>
+            <option> 2</option>
+            <option> 3</option>
+            <option> 4</option>
+            <option> other</option>
+        </select>
+        <button type="button" onclick="handleButtonClick()">Submit</button>
+        <input id="i1" type="text" placeholder="Get the text here">
+    </form>
+    <script>
+        const input1 = document.querySelector('#i1');
+        const select1 = document.querySelector('#s1');
+
+        function handleButtonClick() {
+            input1.value = select1.value;
+        }
+
+        function handleFocus() {
+            input1.focus();
+        }
+    </script>
+</body>
+
+</html>
